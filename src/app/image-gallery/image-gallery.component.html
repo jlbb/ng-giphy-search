@@ -1,0 +1,7 @@
+<div class="imgContainer" *ngFor="let img of images">
+  <img src="{{ img.images.original.url }}" />
+</div>
+
+<div *ngIf="images && images.length === 0">
+  Not found results
+</div>

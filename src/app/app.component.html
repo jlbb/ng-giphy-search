@@ -82,7 +82,9 @@
     </svg>
   </div>
 
-  <app-search-bar></app-search-bar>
+  <app-search-bar (search)="onSearch($event)"></app-search-bar>
+
+  <app-image-gallery [images]="images"></app-image-gallery>
 </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

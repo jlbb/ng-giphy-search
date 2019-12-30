@@ -6,9 +6,10 @@ import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from "./app.component";
 import { SearchBarComponent } from "./search-bar/search-bar.component";
+import { ImageGalleryComponent } from "./image-gallery/image-gallery.component";
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent],
+  declarations: [AppComponent, SearchBarComponent, ImageGalleryComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

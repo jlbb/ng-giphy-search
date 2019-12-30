@@ -2,7 +2,7 @@
 <form [formGroup]="searchForm" (ngSubmit)="submitSearch()">
   <label>
     Input text:
-    <input formControlName="searchString" />
+    <input formControlName="searchString" (keyup)="filterSwearWords()" />
   </label>
 
   <button type="submit">Search</button>
