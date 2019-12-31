@@ -4,10 +4,28 @@
   [formGroup]="searchForm"
   (ngSubmit)="submitSearch()"
 >
-  <input formControlName="searchString" (keyup)="filterSwearWords()" />
+  <input
+    placeholder="Introduce a search term"
+    formControlName="searchString"
+    (keyup)="filterSwearWords()"
+  />
   <button type="submit">Search</button>
 </form>
 
 <p class="searchInfo">
   Introduce a seach term and click on Search button or press Enter key
 </p>
+<div
+  class="searchErrors"
+  *ngIf="searchErrors.searchString && searchErrors.searchString.invalid"
+>
+  <h4>Input search errors</h4>
+  <ul>
+    <li *ngFor="let err of searchErrors.searchString.errors | keyvalue">
+      {{ err.key }}
+      <span *ngIf="err.key === 'minlength'">{{
+        err.value.requiredLength
+      }}</span>
+    </li>
+  </ul>
+</div>

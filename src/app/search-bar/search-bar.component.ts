@@ -12,12 +12,12 @@ export class SearchBarComponent implements OnInit {
   @Output() search = new EventEmitter<any>();
 
   searchForm: FormGroup = new FormGroup({
-    searchString: new FormControl("foo")
+    searchString: new FormControl("", [
+      Validators.required,
+      Validators.minLength(4)
+    ])
   });
-  inputText: FormControl = new FormControl("Reactive form control", [
-    Validators.required,
-    Validators.minLength(4)
-  ]);
+  searchErrors: any = {};
 
   filterWords = ["fuck", "fool"];
   rgx = new RegExp(this.filterWords.join("|"), "gi");
@@ -41,6 +41,18 @@ export class SearchBarComponent implements OnInit {
 
   submitSearch() {
     const searchInput = this.searchForm.value.searchString;
+
+    if (this.searchForm.invalid) {
+      this.searchErrors = this.searchForm.controls;
+      console.log(
+        "INVALID FORM",
+        this.searchForm,
+        this.searchErrors.searchString
+      );
+      return;
+    }
+
+    this.searchErrors = {};
 
     this.searchService.searchGiphy(searchInput).subscribe(giphies => {
       console.log("Giphies", giphies);
