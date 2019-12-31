@@ -1,20 +1,13 @@
-<h3>Form Group</h3>
-<form [formGroup]="searchForm" (ngSubmit)="submitSearch()">
-  <label>
-    Input text:
-    <input formControlName="searchString" (keyup)="filterSwearWords()" />
-  </label>
-
+<h1>Giphy search app</h1>
+<form
+  class="formContainer"
+  [formGroup]="searchForm"
+  (ngSubmit)="submitSearch()"
+>
+  <input formControlName="searchString" (keyup)="filterSwearWords()" />
   <button type="submit">Search</button>
 </form>
-<p>> {{ searchForm.value.searchString }}</p>
 
-<h3>Form Control</h3>
-<label>
-  Input text:
-  <input [formControl]="inputText" />
-</label>
-<p>> {{ inputText.value }}</p>
-<div *ngIf="inputText.errors && inputText.errors.minlength">
-  Name must be at least 4 characters long.
-</div>
+<p class="searchInfo">
+  Introduce a seach term and click on Search button or press Enter key
+</p>

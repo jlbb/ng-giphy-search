@@ -1,12 +1,11 @@
 :host {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .imgContainer {
-  margin: 5px;
-  position: relative;
+  margin: 10px;
   border: 1px solid lightgray;
   height: 200px;
   width: 200px;
@@ -15,4 +14,9 @@
     height: 100%;
     width: 100%;
   }
+}
+
+.notFound {
+  font-weight: bold;
+  color: ghostwhite;
 }
