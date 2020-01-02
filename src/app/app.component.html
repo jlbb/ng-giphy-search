@@ -1,6 +1,11 @@
 <div class="content" role="main">
   <app-search-bar (search)="onSearch($event)"></app-search-bar>
 
+  <app-pagination
+    [maxPages]="pages"
+    (selectPage)="onSearchPage($event)"
+  ></app-pagination>
+
   <app-image-gallery [images]="images"></app-image-gallery>
 </div>
 

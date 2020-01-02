@@ -1,0 +1,20 @@
+<ul class="pagination-container" *ngIf="maxPages > 0">
+  <li class="first-page" (click)="setPage(0)">{{ "1st" }}</li>
+  <li class="previous-page" (click)="setPage(activePage - 1)">{{ "Prv" }}</li>
+  <li
+    class="page-item"
+    *ngFor="let page of pages"
+    [ngClass]="{
+      active: activePage === page,
+      hide: page > (activePage % offsetPage) + 3
+    }"
+    (click)="setPage(page)"
+  >
+    {{ page + 1 }}
+  </li>
+  <li class="next-page" (click)="setPage(activePage + 1)">{{ "Nxt" }}</li>
+  <li class="last-page" (click)="setPage(maxPages - 1)">{{ "lst" }}</li>
+</ul>
+
+<!-- hide:
+activePage + offsetPage - 1 < page || page + offsetPage - 1 < activePage -->

@@ -23,9 +23,6 @@
   <ul>
     <li *ngFor="let err of searchErrors.searchString.errors | keyvalue">
       {{ err.key }}
-      <span *ngIf="err.key === 'minlength'">{{
-        err.value.requiredLength
-      }}</span>
     </li>
   </ul>
 </div>

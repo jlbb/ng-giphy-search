@@ -11,10 +11,13 @@ export class SearchService {
 
   params = new HttpParams().set("rating", "g");
 
+  private limit: number = 25;
+
   constructor(private http: HttpClient) {}
 
-  searchGiphy(searchTerm: string): Observable<any> {
-    const params = this.params.append("q", searchTerm);
+  searchGiphy(searchTerm: string, offset: number = 0): Observable<any> {
+    let params = this.params.append("q", searchTerm);
+    params = params.append("offset", `${this.limit * offset}`);
 
     return this.http.get(this.apiURL, { params });
   }
