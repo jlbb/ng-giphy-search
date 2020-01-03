@@ -6,7 +6,7 @@
     *ngFor="let page of pages"
     [ngClass]="{
       active: activePage === page,
-      hide: page > (activePage % offsetPage) + 3
+      hide: activePage + 2 < page || activePage - 2 > page
     }"
     (click)="setPage(page)"
   >
@@ -15,6 +15,3 @@
   <li class="next-page" (click)="setPage(activePage + 1)">{{ "Nxt" }}</li>
   <li class="last-page" (click)="setPage(maxPages - 1)">{{ "lst" }}</li>
 </ul>
-
-<!-- hide:
-activePage + offsetPage - 1 < page || page + offsetPage - 1 < activePage -->

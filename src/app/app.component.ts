@@ -20,7 +20,6 @@ export class AppComponent {
     this.searchWord = searchWord;
 
     this.searchService.searchGiphy(this.searchWord).subscribe(searchResults => {
-      console.log("Giphies", searchResults);
       this.images = searchResults.data;
 
       if (searchResults.pagination) {
@@ -31,7 +30,7 @@ export class AppComponent {
           ) || 0;
       }
 
-      console.log("Parent getting results", searchResults, this.images);
+      console.log("Search result after SEARCH", searchResults, this.images);
     });
   }
 
@@ -39,7 +38,7 @@ export class AppComponent {
     this.searchService
       .searchGiphy(this.searchWord, page)
       .subscribe(searchResults => {
-        console.log("Giphies on searchPage", searchResults);
+        console.log("Search result change PAGE!", searchResults);
         this.images = searchResults.data;
       });
   }

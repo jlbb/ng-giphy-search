@@ -12,16 +12,11 @@ export class PaginationComponent implements OnInit {
   activePage: number;
   pages: number[];
 
-  private offsetPage: number = 5;
-
   constructor() {}
 
-  ngOnInit() {
-    console.log("Max pages", this.maxPages, this.pages);
-  }
+  ngOnInit() {}
 
   ngOnChanges() {
-    console.log("Changes", this.maxPages);
     this.pages = [...Array(this.maxPages).keys()];
     this.activePage = 0;
   }
@@ -35,7 +30,6 @@ export class PaginationComponent implements OnInit {
       this.activePage = page;
     }
 
-    console.log("Setpage", page, this.maxPages, this.activePage);
     this.selectPage.emit(this.activePage);
   }
 }

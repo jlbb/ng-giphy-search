@@ -14,7 +14,7 @@ export class SearchBarComponent implements OnInit {
   });
   searchErrors: any = {};
 
-  filterWords = ["fuck", "fool"];
+  filterWords = ["fuck", "fool", "damn", "shit", "whore"];
   rgx = new RegExp(this.filterWords.join("|"), "gi");
 
   constructor() {}
