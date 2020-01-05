@@ -5,9 +5,10 @@
 
   li {
     cursor: pointer;
+    display: flex;
     font-weight: bold;
+    justify-content: center;
     padding: 10px;
-    text-align: center;
     width: 20px;
     height: 20px;
 

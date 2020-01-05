@@ -8,7 +8,6 @@ import { SearchService } from "./search-bar/search.service";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = "ng-giphy-search";
   images: any;
   pages: number;
 
