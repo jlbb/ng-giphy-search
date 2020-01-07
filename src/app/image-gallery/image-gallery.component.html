@@ -1,5 +1,5 @@
 <div class="imgContainer" *ngFor="let img of images">
-  <img src="{{ img.images.original.url }}" />
+  <img src="{{ img.images.preview_webp.url }}" />
 </div>
 
 <div class="notFound" *ngIf="images && images.length === 0">

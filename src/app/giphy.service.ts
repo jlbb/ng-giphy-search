@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { HttpParams, HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
-export class SearchService {
+export class GiphyService {
   apiKey = "CdRKiCMbTnt9CkZTZ0lGukSczk6iT4Z6";
   apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}`;
 

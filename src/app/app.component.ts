@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
-import { SearchService } from "./search-bar/search.service";
+import { GiphyService } from "./giphy.service";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  providers: [SearchService],
+  providers: [GiphyService],
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
@@ -13,12 +13,12 @@ export class AppComponent {
 
   searchWord: string;
 
-  constructor(private searchService: SearchService) {}
+  constructor(private giphyService: GiphyService) {}
 
   onSearch(searchWord: string) {
     this.searchWord = searchWord;
 
-    this.searchService.searchGiphy(this.searchWord).subscribe(searchResults => {
+    this.giphyService.searchGiphy(this.searchWord).subscribe(searchResults => {
       this.images = searchResults.data;
 
       if (searchResults.pagination) {
@@ -34,7 +34,7 @@ export class AppComponent {
   }
 
   onSearchPage(page: number) {
-    this.searchService
+    this.giphyService
       .searchGiphy(this.searchWord, page)
       .subscribe(searchResults => {
         console.log("Search result change PAGE!", searchResults);

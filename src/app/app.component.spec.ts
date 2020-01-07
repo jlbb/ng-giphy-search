@@ -6,7 +6,7 @@ import { PaginationComponent } from "./pagination/pagination.component";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { ReactiveFormsModule } from "@angular/forms";
-import { SearchService } from "./search-bar/search.service";
+import { GiphyService } from "./giphy.service";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
@@ -18,7 +18,7 @@ describe("AppComponent", () => {
         PaginationComponent
       ],
       imports: [HttpClientModule, AppRoutingModule, ReactiveFormsModule],
-      providers: [SearchService]
+      providers: [GiphyService]
     }).compileComponents();
   }));
 
