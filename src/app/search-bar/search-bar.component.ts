@@ -15,6 +15,7 @@ export class SearchBarComponent implements OnInit {
   searchErrors: any = {};
 
   filterWords = ["fuck", "fool", "damn", "shit", "whore"];
+  hiddenWord = "****";
   rgx = new RegExp(this.filterWords.join("|"), "gi");
 
   constructor() {}
@@ -28,7 +29,7 @@ export class SearchBarComponent implements OnInit {
       this.searchForm.setValue({
         searchString: this.searchForm.value.searchString.replace(
           this.rgx,
-          "****"
+          this.hiddenWord
         )
       });
     }
