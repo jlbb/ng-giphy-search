@@ -22,13 +22,14 @@ describe("SearchBarComponent", () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SearchBarComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
+    
     nameInput = fixture.debugElement.nativeElement.querySelector(
       "form > input"
     );
     button = fixture.debugElement.nativeElement.querySelector(
       'form > button[type="submit"]'
     );
-    fixture.detectChanges();
   });
 
   it("should create", () => {
