@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
+import swearWordList from "../constants/swearWordList";
+
 @Component({
   selector: "app-search-bar",
   templateUrl: "./search-bar.component.html",
@@ -14,9 +16,8 @@ export class SearchBarComponent implements OnInit {
   });
   searchErrors: any = {};
 
-  filterWords = ["fuck", "fool", "damn", "shit", "whore"];
   hiddenWord = "****";
-  rgx = new RegExp(this.filterWords.join("|"), "gi");
+  rgx = new RegExp(swearWordList.join("|"), "gi");
 
   constructor() {}
 
