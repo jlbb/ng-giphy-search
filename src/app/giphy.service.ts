@@ -17,6 +17,7 @@ export class GiphyService {
 
   searchGiphy(searchTerm: string, offset: number = 0): Observable<any> {
     let params: HttpParams = this.params.append("q", searchTerm);
+    params = params.append("limit", `${this.limit}`);
     params = params.append("offset", `${this.limit * offset}`);
 
     return this.http.get(this.apiURL, { params });
