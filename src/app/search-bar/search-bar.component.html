@@ -1,6 +1,6 @@
 <h1>Giphy search app</h1>
 <form
-  class="formContainer"
+  class="form-container"
   [formGroup]="searchForm"
   (ngSubmit)="submitSearch()"
 >
@@ -12,11 +12,11 @@
   <button type="submit">Search</button>
 </form>
 
-<p class="searchInfo">
+<p class="search-info">
   Introduce a seach term and click on Search button or press Enter key
 </p>
 <div
-  class="searchErrors"
+  class="search-errors"
   *ngIf="searchErrors.searchString && searchErrors.searchString.invalid"
 >
   <h4>Input search errors</h4>

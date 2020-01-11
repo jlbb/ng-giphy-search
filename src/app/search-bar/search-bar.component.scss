@@ -9,7 +9,7 @@ h1 {
   color: gold;
 }
 
-.formContainer {
+.form-container {
   display: flex;
   justify-content: space-evenly;
 
@@ -39,11 +39,11 @@ h1 {
   }
 }
 
-.searchInfo {
+.search-info {
   color: darkmagenta;
 }
 
-.searchErrors {
+.search-errors {
   color: darkred;
   margin-top: 0;
   text-transform: capitalize;

@@ -1,7 +1,12 @@
-<div class="imgContainer" *ngFor="let img of images">
-  <img src="{{ img.images.preview_webp.url }}" />
+<div class="img-container" *ngFor="let img of images">
+  <img
+    src="{{
+      (img.images.preview_webp && img.images.preview_webp.url) ||
+        (img.images.fixed_height_small && img.images.fixed_height_small.webp)
+    }}"
+  />
 </div>
 
-<div class="notFound" *ngIf="images && images.length === 0">
+<div class="not-found" *ngIf="images && images.length === 0">
   Not found results
 </div>

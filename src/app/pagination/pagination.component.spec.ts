@@ -31,7 +31,7 @@ describe("PaginationComponent", () => {
   });
 
   it("should not render the element if it doesn't have a maxPages input", () => {
-    expect(paginationElem).toBeNull();
+    expect(paginationElem).toBeFalsy();
   });
 
   it("should not change page when is only one page, or it's an edge and there is no more prev/next pages", () => {
