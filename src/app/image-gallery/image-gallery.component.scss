@@ -9,11 +9,40 @@
   margin: 10px;
   border: 1px solid lightgray;
   height: 200px;
+  position: relative;
   width: 200px;
 
   img {
     height: 100%;
     width: 100%;
+  }
+
+  .copy-link-icon {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    & .copy-link-icon {
+      background-color: rgba(0, 0, 0, 0.4);
+      background-image: url("../../assets/copy-link.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 60%;
+      height: 100%;
+      opacity: 1;
+      position: absolute;
+      width: 100%;
+      transition-delay: 0.5s;
+    }
+  }
+
+  &:active {
+    & .copy-link-icon {
+      background-color: darkslategray;
+    }
   }
 }
 

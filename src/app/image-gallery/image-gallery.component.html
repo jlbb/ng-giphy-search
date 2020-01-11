@@ -1,4 +1,5 @@
-<div class="img-container" *ngFor="let img of images">
+<div class="img-container" *ngFor="let img of images" (click)="copyLink(img)">
+  <div class="copy-link-icon"></div>
   <img
     src="{{
       (img.images.preview_webp && img.images.preview_webp.url) ||

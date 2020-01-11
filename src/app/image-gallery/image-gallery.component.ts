@@ -11,4 +11,11 @@ export class ImageGalleryComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  copyLink(img) {
+    navigator.clipboard.writeText(
+      (img.images.preview_webp && img.images.preview_webp.url) ||
+        (img.images.fixed_height_small && img.images.fixed_height_small.webp)
+    );
+  }
 }
