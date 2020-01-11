@@ -16,17 +16,15 @@ export class SearchBarComponent implements OnInit {
   });
   searchErrors: any = {};
 
-  hiddenWord = "****";
-  rgx = new RegExp(swearWordList.join("|"), "gi");
+  hiddenWord: string = "****";
+  rgx: RegExp = new RegExp(swearWordList.join("|"), "gi");
 
   constructor() {}
 
   ngOnInit() {}
 
   filterSwearWords() {
-    const filterWord = this.rgx.test(this.searchForm.value.searchString);
-
-    if (filterWord) {
+    if (this.rgx.test(this.searchForm.value.searchString)) {
       this.searchForm.setValue({
         searchString: this.searchForm.value.searchString.replace(
           this.rgx,
@@ -37,7 +35,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   submitSearch() {
-    const searchInput = this.searchForm.value.searchString;
+    const searchInput: string = this.searchForm.value.searchString;
 
     if (this.searchForm.invalid) {
       this.searchErrors = this.searchForm.controls;

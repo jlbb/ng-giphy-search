@@ -1,7 +1,8 @@
 import { TestBed, inject } from "@angular/core/testing";
 import {
   HttpClientTestingModule,
-  HttpTestingController
+  HttpTestingController,
+  TestRequest
 } from "@angular/common/http/testing";
 
 import { GiphyService } from "./giphy.service";
@@ -65,7 +66,7 @@ describe("GiphyService", () => {
         expect(searchResults).toEqual(mockGiphies);
       });
 
-      let req = httpMock.expectOne(req => {
+      let req: TestRequest = httpMock.expectOne(req => {
         expect(req.url).toEqual(giphyService.apiURL);
         return true;
       });

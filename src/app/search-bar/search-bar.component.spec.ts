@@ -8,7 +8,7 @@ describe("SearchBarComponent", () => {
   let fixture: ComponentFixture<SearchBarComponent>;
 
   let nameInput: HTMLInputElement;
-  let button: HTMLInputElement;
+  let button: HTMLButtonElement;
 
   const text: string = "Puppies";
 
@@ -23,7 +23,7 @@ describe("SearchBarComponent", () => {
     fixture = TestBed.createComponent(SearchBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    
+
     nameInput = fixture.debugElement.nativeElement.querySelector(
       "form > input"
     );

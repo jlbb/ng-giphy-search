@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### Aditional developer's notes
 
-For changing the dev server port you can check how to do it here: https://stackoverflow.com/a/51175153/1186541. Either adding e.g. `port: 8080` in the serve -> options of the project or run `ng serve --port 8080` using the cli.
+For changing the dev server port you can check how to do it here: https://stackoverflow.com/a/51175153/1186541. Either adding in angular.json e.g. `port: 8080` in the serve -> options of the project or run `ng serve --port 8080` using the cli.
 
 `FormsModule` is necessary to be added to use the `[(ngModel)]` two-way data bindings: https://angular.io/guide/template-syntax#import-formsmodule-to-use-ngmodel
 

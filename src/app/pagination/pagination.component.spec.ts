@@ -8,7 +8,7 @@ describe("PaginationComponent", () => {
   let component: PaginationComponent;
   let fixture: ComponentFixture<PaginationComponent>;
 
-  let paginationElem;
+  let paginationElem: HTMLUListElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

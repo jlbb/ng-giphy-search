@@ -23,7 +23,7 @@ describe("ImageGalleryComponent", () => {
   });
 
   it("should not render image gallery when doesn't have input images", () => {
-    const galleryElem = fixture.debugElement.nativeElement.querySelector(
+    const galleryElem: HTMLElement = fixture.debugElement.nativeElement.querySelector(
       ".img-container"
     );
 
@@ -34,7 +34,7 @@ describe("ImageGalleryComponent", () => {
     component.images = [];
     fixture.detectChanges();
 
-    const galleryElem = fixture.debugElement.nativeElement.querySelector(
+    const galleryElem: HTMLElement = fixture.debugElement.nativeElement.querySelector(
       ".not-found"
     );
 
@@ -42,8 +42,8 @@ describe("ImageGalleryComponent", () => {
   });
 
   it("should render images given a non-empty set of images", () => {
-    const url1 = "test1.webp";
-    const url2 = "test2.webp";
+    const url1: string = "test1.webp";
+    const url2: string = "test2.webp";
 
     component.images = [
       {
@@ -63,7 +63,7 @@ describe("ImageGalleryComponent", () => {
     ];
     fixture.detectChanges();
 
-    const galleryElem = fixture.debugElement.nativeElement.querySelectorAll(
+    const galleryElem: HTMLImageElement = fixture.debugElement.nativeElement.querySelectorAll(
       ".img-container > img"
     );
 
